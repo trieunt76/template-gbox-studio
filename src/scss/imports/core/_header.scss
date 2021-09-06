@@ -1,0 +1,113 @@
+.header {
+    @include xs() {
+        position: fixed;
+        z-index: 400;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    &__top {
+        height: $height-header;
+        background-color: $color-light-v1;
+        .container {
+            position: relative;
+            @include flex(null, space-between, center);
+            height: inherit;
+        }
+        .hamburger {
+            @include size(5.2rem);
+            padding: 1rem;
+            margin-left: -1rem;
+            @include flexCenter();
+            @include visible(true);
+            cursor: pointer;
+            span {
+                position: relative;
+                background: $color-primary;
+                @include size(100%, 0.2rem);
+                display: block;
+                @include transition(all 0.3s);
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    background: $color-primary;
+                    @include size(100%, 0.2rem);
+                    left: 0;
+                    @include transition(all 0.3s);
+                }
+                &::before {
+                    @include transform(translateY(-1rem));
+                }
+                &::after {
+                    @include transform(translateY(1rem));
+                }
+            }
+            @include xs() {
+                @include visible(false);
+            }
+        }
+        .logo {
+            @include size(4.2rem);
+            @include positionCenter('left');
+            img {
+                object-fit: unset;
+            }
+        }
+        .social {
+            width: 2.2rem;
+            svg {
+                fill: $color-primary;
+                @include size(inherit);
+            }
+        }
+    }
+    &__navbar {
+        padding-top: 2rem;
+        @include xs() {
+            display: none;
+        }
+        .inner {
+            @include flex(null, space-between, center);
+            border-bottom: 0.1rem solid $color-black;
+        }
+        a {
+            @include text($font-pn-sbold, $fs-body, $tcl-body, null, uppercase);
+            padding: 1.8rem 0;
+            @include transition(all 0.3s);
+            &:hover {
+                opacity: 0.5;
+                @include transition(all 0.3s);
+            }
+        }
+        .menu {
+            &__item {
+                padding: 1rem 3rem;
+            }
+        }
+    }
+}
+
+body.open-nav {
+    .header__top {
+        .hamburger {
+            span {
+                @include transform(translateX(-5.2rem));
+                background-color: transparent;
+                @include transition(all 0.3s);
+                &::before {
+                    @include transform(
+                        rotate(45deg) translate(3.5rem, -3.5rem)
+                    );
+                }
+                &::after {
+                    @include transform(
+                        rotate(-45deg) translate(3.5rem, 3.5rem)
+                    );
+                    // @include transition(all 0.3s);
+                }
+            }
+        }
+    }
+}

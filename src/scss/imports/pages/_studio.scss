@@ -1,0 +1,163 @@
+.studio {
+    --height-thumbnail: 30rem;
+    @include sm() {
+        --height-thumbnail: 20rem;
+    }
+    @include xs() {
+        --height-thumbnail: 30rem;
+        margin-top: $height-header;
+    }
+    .container {
+        @include flex(null, space-between);
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: calc((100% / 2 - 2rem));
+        margin-bottom: 7.2rem;
+        @include xs() {
+            width: 100%;
+        }
+        .thumbnail {
+            position: relative;
+            @include size(100%, var(--height-thumbnail));
+            display: block;
+            overflow: hidden;
+            @include transition(all 0.3s);
+            &::before {
+                content: '';
+                display: block;
+                @include position(absolute, 0, 0, 0, 0);
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                @include transition(all 0.3s);
+                z-index: 400;
+            }
+            img {
+                @include size(100%);
+                @include transition(all 0.3s);
+            }
+        }
+        &:hover {
+            .thumbnail {
+                @include transition(all 0.3s);
+                &::before {
+                    @include transition(all 0.3s);
+                    background-color: rgba($color: #000000, $alpha: 0);
+                }
+                img {
+                    @include transform(scale(1.1));
+                    @include transition(all 0.3s);
+                }
+            }
+            .info {
+                background-color: $color-light-v1;
+                @include transition(all 0.3s);
+                .content {
+                    span,
+                    p {
+                        color: $tcl-white;
+                    }
+                    .content__right {
+                        a {
+                            i {
+                                svg {
+                                    fill: $color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .info {
+            @include transition(all 0.3s);
+            @include flex(null, space-between);
+            .number {
+                background-color: $color-primary;
+                @include flexCenter();
+                flex-direction: column;
+                padding: 3rem 4.6rem;
+                span {
+                    @include text(
+                        $font-pn-regular,
+                        $fs-body,
+                        null,
+                        null,
+                        uppercase
+                    );
+                    @include sm() {
+                        font-size: 1rem;
+                    }
+                    &:last-child {
+                        @include text($font-din, $fs-heading-50);
+                        font-weight: bold;
+                        margin-top: 0.6rem;
+                        @include sm() {
+                            font-size: 4.2rem;
+                        }
+                    }
+                }
+                @include sm() {
+                    padding: 1rem 2.5rem;
+                }
+                @include xs() {
+                    padding: 3rem 4.6rem;
+                }
+            }
+            .content {
+                width: 100%;
+                @include flex(null, space-between);
+                padding: 3.7rem 3rem 2rem 8rem;
+                @include sm() {
+                    padding: 1.2rem;
+                }
+                @include xs() {
+                    padding: 3.7rem 3rem 2rem 8rem;
+                }
+                @include xxs() {
+                    padding: 3rem 2rem 2rem 4rem;
+                }
+                &__left {
+                    p {
+                        margin-top: -1rem;
+                        @include text(
+                            $font-pn-regular,
+                            $fs-body,
+                            $tcl-body,
+                            null,
+                            null,
+                            3rem
+                        );
+                        &:first-child {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                &__right {
+                    a {
+                        @include text(
+                            $font-pn-bold,
+                            $fs-body,
+                            $tcl-body,
+                            null,
+                            uppercase
+                        );
+                        span {
+                            @include xxs() {
+                                display: none;
+                            }
+                        }
+                        i {
+                            width: 1.6rem;
+                            display: block;
+                            margin: auto;
+                            padding-top: 1.8rem;
+                            @include xxs() {
+                                @include transform(rotate(-90deg));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

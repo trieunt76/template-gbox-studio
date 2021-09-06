@@ -1,0 +1,40 @@
+.works {
+    @include xs() {
+        margin-top: $height-header;
+    }
+    .project {
+        padding-bottom: 1.4rem;
+        &__footer {
+            .btn-view-all {
+                @include xs() {
+                    margin-top: 22rem;
+                }
+            }
+            .book-now {
+                position: absolute;
+                right: 0;
+                top: 0;
+                @include xs() {
+                    text-align: center;
+                    display: block;
+                    right: unset;
+                    @include positionCenter('left');
+                }
+                p {
+                    @include xs() {
+                        text-align: center;
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+                &__btn {
+                    &:hover {
+                        background-color: $color-primary;
+                        color: $tcl-light-v2;
+                        @include transition(all 0.3s);
+                    }
+                }
+            }
+        }
+    }
+}

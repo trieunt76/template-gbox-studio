@@ -1,0 +1,287 @@
+/* --------------------- Animations --------------------- */
+@mixin animation($str) {
+    animation: #{$str};
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+/* ---------------------- Transform --------------------- */
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+}
+
+@mixin transform-origin($args) {
+    transform-origin: $args;
+    -webkit-transform-origin: $args;
+    -moz-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -o-transform-origin: $args;
+}
+
+/* --------------------- Transitions -------------------- */
+@mixin transition-delay($args) {
+    transition-delay: $args;
+    -webkit-transition-delay: $args;
+    -moz-transition-delay: $args;
+    -ms-transition-delay: $args;
+    -o-transition-delay: $args;
+}
+
+@mixin transition($args) {
+    transition: $args;
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+}
+
+/* --------------------- Text - Font -------------------- */
+@mixin text(
+    $font-family: null,
+    $font-size: null,
+    $color: null,
+    $letter-spacing: null,
+    $text-tranform: null,
+    $line-height: null,
+    $font-weight: null
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $color;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-tranform;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+
+@mixin over-text($lines) {
+    display: -webkit-inline-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* ---------------------- Flexible ---------------------- */
+@mixin flex($direction: row, $content: null, $items: null, $wrap: null) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+    -webkit-box-pack: $content;
+    -ms-flex-pack: $content;
+    justify-content: $content;
+    -webkit-box-align: $items;
+    -ms-flex-align: $items;
+    align-items: $items;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+/* ---------------------- Position ---------------------- */
+@mixin position(
+    $position,
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null
+) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute($args...) {
+    @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+    @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+    @include position(fixed, $args...);
+}
+
+/* ---------------------- Box Model --------------------- */
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin borderRadius($radius) {
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+/* ------------------- Selector Pseudo ------------------ */
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+/* -------------------- Align Element ------------------- */
+@mixin positionCenter($pos) {
+    position: absolute;
+    @if $pos == "both" {
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    } @else if $pos == "left" {
+        left: 50%;
+        @include transform(translateX(-50%));
+    } @else if $pos == "top" {
+        top: 50%;
+        @include transform(translateY(-50%));
+    }
+}
+
+@mixin flexCenter {
+    @include flex(null, center, center);
+}
+
+@mixin imageCenter($maxwidth: initial) {
+    max-width: $maxwidth;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    @include positionCenter("both");
+}
+
+@mixin fullscreen($fixed: false) {
+    @include size(100%);
+    top: 0;
+    left: 0;
+    @if $fixed {
+        position: fixed;
+    } @else {
+        position: absolute;
+    }
+}
+
+/* -------------------- Custom Mixins ------------------- */
+@mixin custom-scroll($width: 2px, $bgTrack: #000, $bgThumb: #ddd) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        background: $bgTrack;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $bgThumb;
+    }
+}
+
+@mixin visible($hidden: false) {
+    @if $hidden == true {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    } @else {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+/* ---------------- Responsive Max Width ---------------- */
+// Large desktop
+@mixin lg {
+    @media screen and (max-width: $lg-max) {
+        @content;
+    }
+}
+// Desktop
+@mixin md {
+    @media screen and (max-width: $md-max) {
+        @content;
+    }
+}
+// Tablet
+@mixin sm {
+    @media screen and (max-width: $sm-max) {
+        @content;
+    }
+}
+// Mobile
+@mixin xs {
+    @media screen and (max-width: $xs-max) {
+        @content;
+    }
+}
+// Small mobile
+@mixin xxs {
+    @media (max-width: $xxs-max) {
+        @content;
+    }
+}
+
+/* ---------------- Responsive Landscape ---------------- */
+@mixin mdX {
+    @media screen and (max-width: $md-max) and (orientation: landscape) {
+        @content;
+    }
+}
+// tablet landscape
+@mixin smX {
+    @media screen and (max-width: $sm-max) and (orientation: landscape) {
+        @content;
+    }
+}
+// mobile landscape
+@mixin xsX {
+    @media screen and (max-width: $xs-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin maxWidth($args) {
+    @media (max-width: $args) {
+        @content;
+    }
+}
+@mixin minWidth($args) {
+    @media (min-width: $args) {
+        @content;
+    }
+}
+@mixin minHeight($args) {
+    @media (min-height: $args) {
+        @content;
+    }
+}
+@mixin maxHeight($args) {
+    @media (max-height: $args) {
+        @content;
+    }
+}

@@ -1,0 +1,32 @@
+.navbar {
+    @include position(fixed, 7.2rem, null, null, 0);
+    @include size(100%, 100vh);
+    background-color: $color-primary;
+    z-index: 400;
+    @include flex(column, null, center);
+    padding-top: 2rem;
+    @include transform(translateX(-100%));
+    @include transition(all 0.3s);
+    z-index: 800;
+    &__item {
+        &-link {
+            display: block;
+            @include text(
+                $font-pn-light,
+                $fs-heading-30,
+                $tcl-body,
+                null,
+                uppercase
+            );
+            padding: 2rem 0;
+        }
+    }
+}
+
+body.open-nav {
+    .navbar {
+        @include visible(false);
+        left: 100%;
+        @include transition(all 0.3s);
+    }
+}

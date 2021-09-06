@@ -1,0 +1,150 @@
+.work-detail {
+    @include xs() {
+        margin-top: $height-header;
+    }
+    &__title {
+        @include flex(null, space-between, center);
+        padding-top: 5.5rem;
+        padding-bottom: 3.5rem;
+        .name {
+            @include text(
+                $font-pn-regular,
+                $fs-body,
+                $tcl-body,
+                0.2rem,
+                uppercase
+            );
+        }
+        .control {
+            @include flex(null, space-between);
+            width: 28rem;
+            @include xs() {
+                width: unset;
+            }
+            .fullscreen,
+            .back {
+                @include flex(null, null, center);
+                span {
+                    margin-right: 1.8rem;
+                    @include text($font-pn-regular, $fs-body);
+                }
+            }
+            .fullscreen {
+                cursor: pointer;
+                @include xs() {
+                    display: none;
+                }
+            }
+            .back {
+                color: $tcl-body;
+                i {
+                    width: 1.6rem;
+                    display: block;
+                    @include transform(rotate(90deg));
+                }
+            }
+        }
+    }
+    &__slider {
+        --height-slider: 53rem;
+        @include sm() {
+            --height-slider: 42rem;
+        }
+        @include xs() {
+            --height-slider: 32rem;
+        }
+        &-item {
+            @include size(100%, var(--height-slider));
+            position: relative;
+            img {
+                @include size(100%);
+            }
+        }
+        .flickity-page-dots {
+            display: none;
+        }
+        &.is-fullscreen {
+            z-index: 900;
+            .flickity-page-dots {
+                display: block;
+            }
+            .work-detail__slider-item {
+                @include size(100%);
+                padding: 5rem 8rem;
+                @include sm() {
+                    padding: 8rem 5rem;
+                }
+                @include xs() {
+                    padding: 15rem 2rem;
+                }
+            }
+        }
+    }
+    &__info {
+        @include flex();
+        padding-top: 3.8rem;
+        padding-bottom: 8rem;
+        @include xs() {
+            flex-direction: column;
+            padding-bottom: 5rem;
+        }
+        &-item {
+            .title {
+                @include text(
+                    $font-pn-light,
+                    $fs-heading-14,
+                    $tcl-body,
+                    0.2rem,
+                    uppercase
+                );
+                padding-bottom: 2.2rem;
+            }
+            p {
+                @include text(
+                    $font-body,
+                    $fs-heading-11,
+                    $tcl-body,
+                    null,
+                    null,
+                    2.2rem
+                );
+                span {
+                    font-style: italic;
+                }
+            }
+            &.desc {
+                max-width: 32rem;
+                @include xs() {
+                    order: 2;
+                }
+            }
+            &.client {
+                max-width: 6rem;
+                padding: 0 18rem;
+                @include sm() {
+                    padding: 0 15rem;
+                }
+                @include xs() {
+                    padding: unset;
+                    order: 1;
+                }
+            }
+            &.team {
+                max-width: 17rem;
+                p {
+                    span:first-child {
+                        text-transform: uppercase;
+                        font-style: normal;
+                    }
+                }
+                @include xs() {
+                    order: 3;
+                }
+            }
+            @include xs() {
+                max-width: 100% !important;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

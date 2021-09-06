@@ -1,0 +1,230 @@
+.studio-detail {
+    @include xs() {
+        margin-top: $height-header;
+    }
+    &__btn {
+        @include flex(null, flex-end);
+        padding-top: 5.5rem;
+        padding-bottom: 3.5rem;
+        a {
+            @include flex(null, null, center);
+            i {
+                width: 1.6rem;
+                display: block;
+                @include transform(rotate(90deg));
+            }
+            span {
+                margin-right: 1.8rem;
+                @include text($font-pn-regular, $fs-body, $tcl-body);
+            }
+        }
+    }
+    &__slider {
+        position: relative;
+        --height-slider: 47.7rem;
+        @include sm() {
+            --height-slider: 40rem;
+        }
+        @include sm() {
+            --height-slider: 36rem;
+        }
+        .flickity-page-dots {
+            display: none;
+        }
+        &-item {
+            @include size(100%, var(--height-slider));
+            img {
+                @include size(100%);
+            }
+        }
+        &.is-fullscreen {
+            z-index: 999;
+            .flickity-page-dots {
+                display: block;
+            }
+            .studio-detail__slider-item {
+                @include size(100%);
+                padding: 5rem 8rem;
+                @include sm() {
+                    padding: 8rem 5rem;
+                }
+                @include xs() {
+                    padding: 15rem 2rem;
+                }
+            }
+        }
+    }
+    &__info {
+        @include flex(null, space-between, flex-start);
+        padding: 0 2rem;
+        padding-bottom: 6rem;
+        @include sm() {
+            padding-bottom: 4rem;
+        }
+        &-item {
+            @include flex();
+            padding-top: 3.7rem;
+            &.number {
+                padding: 2.7rem 3.7rem;
+                background-color: $color-primary;
+                flex-direction: column;
+                span:first-child {
+                    @include text(
+                        $font-pn-regular,
+                        $fs-heading-11,
+                        $tcl-body,
+                        null,
+                        uppercase,
+                        2rem
+                    );
+                }
+                span:last-child {
+                    @include text($font-din, $fs-heading-50);
+                    font-weight: bold;
+                    margin-top: 1rem;
+                }
+                @include sm() {
+                    padding: 2rem 3rem;
+                }
+            }
+            &.dimensions {
+                flex-direction: column;
+                margin-top: -0.5rem;
+                width: 28rem;
+                padding-left: 4rem;
+                span:first-child {
+                    @include text(
+                        $font-pn-regular,
+                        $fs-body,
+                        $tcl-body,
+                        0.2rem,
+                        uppercase,
+                        3rem
+                    );
+                    padding-bottom: 1rem;
+                }
+                @include xs() {
+                    width: 100%;
+                }
+            }
+            &.download,
+            &.fullscreen {
+                width: 15rem;
+                @include flex(null, center, center);
+                span {
+                    margin-right: 1.8rem;
+                    @include text($font-pn-regular, $fs-body, $tcl-body);
+                }
+                @include xs() {
+                    display: none;
+                }
+            }
+            &.control {
+                @include xs() {
+                    display: none;
+                }
+            }
+        }
+        border-bottom: 1px solid $color-black;
+    }
+    &__content {
+        margin-top: 3rem;
+        padding: 0 2rem;
+        @include flex(null, space-between);
+        flex-wrap: wrap;
+        .--row {
+            width: calc((100% / 2) - 4rem);
+            @include xs() {
+                width: 100%;
+            }
+        }
+        &-item {
+            margin-bottom: 6rem;
+            .title {
+                @include text($font-pn-ebold, $fs-heading-32, #39382f);
+                padding-bottom: 2.2rem;
+            }
+            .note {
+                @include text(
+                    $font-pn-regular,
+                    $fs-heading-14,
+                    $tcl-body,
+                    null,
+                    null,
+                    2rem
+                );
+                span {
+                    @include text($font-pn-bold);
+                }
+                padding-bottom: 3rem;
+            }
+            .table {
+                border: 1px solid $color-black;
+                &__item {
+                    padding: 2.5rem 0;
+                    padding-left: 6rem;
+                    padding-right: 2rem;
+                    @include flex(null, space-between);
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $color-black;
+                    }
+                    @include text($font-pn-regular, $fs-heading-14);
+                    @include sm() {
+                        padding-left: 4rem;
+                    }
+                }
+            }
+            &.floorplan {
+                img {
+                    margin-top: 7rem;
+                    @include xs() {
+                        margin-top: 2rem;
+                    }
+                }
+            }
+            &.specs {
+                width: 100%;
+                margin-bottom: 6rem;
+                .content {
+                    @include flex(null, space-between);
+                    @include xs() {
+                        flex-direction: column;
+                    }
+                    &__item {
+                        @include text(
+                            $font-pn-regular,
+                            $fs-heading-14,
+                            $tcl-body,
+                            null,
+                            null,
+                            2rem
+                        );
+                        p {
+                            padding: 1.2rem 0;
+                            span:first-child {
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__book {
+        @include flex(column, center, center);
+        margin-bottom: 7rem;
+        img {
+            width: 1.6rem;
+            margin-bottom: 2rem;
+        }
+        .book-now {
+            &:hover {
+                .book-now__btn {
+                    background-color: $color-primary;
+                    color: $tcl-light-v2;
+                    @include transition(all 0.3s);
+                }
+            }
+        }
+    }
+}

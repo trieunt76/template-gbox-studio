@@ -1,0 +1,61 @@
+.contact {
+    background: url('../images/contact-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 7.4rem;
+    @include xs() {
+        margin-top: 7rem;
+    }
+    &__logo,
+    &__info {
+        @include flexCenter();
+    }
+    &__info {
+        align-items: flex-start;
+        margin-top: 3.4rem;
+        padding-bottom: 10rem;
+        @include xs() {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 6rem;
+        }
+        &-item {
+            margin: 0 2.8rem;
+            @include xs() {
+                text-align: center;
+                &:first-child {
+                    order: 2;
+                }
+                &:last-child {
+                    order: 1;
+                }
+            }
+            p {
+                @include text(
+                    $font-pn-regular,
+                    $fs-body,
+                    $tcl-white,
+                    0.1rem,
+                    uppercase,
+                    3rem
+                );
+            }
+            &:last-child {
+                p:last-child {
+                    margin-top: 3rem;
+                    @include xs() {
+                        margin-top: unset;
+                    }
+                }
+            }
+        }
+    }
+    &__arrow {
+        @include flexCenter();
+        padding-bottom: 2rem;
+        svg {
+            width: 2rem;
+            fill: $color-white;
+        }
+    }
+}

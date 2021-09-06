@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rental | Template Gbox Studio Front-End</title>
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/libs.min.css" />
+        <link rel="stylesheet" href="css/style.min.css" />
+    </head>
+
+    <body>
+        <!-- --------------------------------------------------- -->
+        <!--                       Header                        -->
+        <!-- --------------------------------------------------- -->
+        <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="hamburger">
+                        <span></span>
+                    </div>
+                    <a href="index.html" class="logo">
+                        <img
+                            src="images/logo-main.svg"
+                            alt="Logo GBox Studio"
+                        />
+                        <h1 class="hidden">GBox Studio</h1>
+                    </a>
+                    <a href="#" class="social">
+                        <svg
+                            id="Bold"
+                            enable-background="new 0 0 24 24"
+                            height="512"
+                            viewBox="0 0 24 24"
+                            width="512"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <nav class="header__navbar">
+                <div class="container">
+                    <div class="inner">
+                        <a href="about.html">About</a>
+                        <div class="menu">
+                            <a href="studio.html" class="menu__item">Studio</a>
+                            <a href="rental.html" class="menu__item">Rental</a>
+                            <a href="cafe.html" class="menu__item">Cafe</a>
+                            <a href="works.html" class="menu__item">Work</a>
+                        </div>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <ul class="navbar">
+            <li class="navbar__item">
+                <a href="about.html" class="navbar__item-link">About</a>
+            </li>
+            <li class="navbar__item">
+                <a href="studio.html" class="navbar__item-link">Studio</a>
+            </li>
+            <li class="navbar__item">
+                <a href="cafe.html" class="navbar__item-link">Cafe</a>
+            </li>
+            <li class="navbar__item">
+                <a href="works.html" class="navbar__item-link">Work</a>
+            </li>
+            <li class="navbar__item">
+                <a href="#" class="navbar__item-link">Retal</a>
+            </li>
+            <li class="navbar__item">
+                <a href="rental.html" class="navbar__item-link">Retal</a>
+            </li>
+        </ul>
+        <main class="rental-page">
+            <section class="rental">
+                <div class="container">
+                    <div class="rental__left">
+                        <div class="number">
+                            <span>Studio</span>
+                            <span>01</span>
+                        </div>
+                        <h3>Rental</h3>
+                        <div class="content">
+                            <p>DIMENSIONS</p>
+                            <p>
+                                87ft × 92ft × 31ft
+                                <br />
+                                (26.52m × 28.04m × 9.45m)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rental__right">
+                        <form action="#" class="rental__right-form">
+                            <h2 class="rental__right-title">Company details</h2>
+                            <div class="form">
+                                <div class="form__item">
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Company Name: *</label
+                                        >
+                                        <input
+                                            class="form__control"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Contact Name: *</label
+                                        >
+                                        <input
+                                            class="form__control"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Phone: *</label
+                                        >
+                                        <input
+                                            class="form__control"
+                                            type="phone"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form__item">
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Email: *</label
+                                        >
+                                        <input
+                                            class="form__control"
+                                            type="email"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Accounts payable contact: *</label
+                                        >
+                                        <input
+                                            class="form__control"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Company Address</label
+                                        >
+                                        <textarea
+                                            class="form__control"
+                                            rows="4"
+                                        ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="rental__right-title">Booking Detail</h2>
+                            <div class="studio-select">
+                                <label class="form__label">Studio:</label>
+                                <div class="studio-select__list">
+                                    <div class="studio-select__list-item">
+                                        <span>01</span>
+                                    </div>
+                                    <div class="studio-select__list-item">
+                                        <span>02</span>
+                                    </div>
+                                    <div class="studio-select__list-item">
+                                        <span>03</span>
+                                    </div>
+                                    <div class="studio-select__list-item">
+                                        <span>04</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form">
+                                <div class="group">
+                                    <div class="form__item">
+                                        <div class="form__group">
+                                            <label class="form__label"
+                                                >Catering requirements:
+                                            </label>
+                                            <textarea
+                                                class="form__control"
+                                                rows="4"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__group">
+                                            <label class="form__label"
+                                                >Lighting requirements:
+                                            </label>
+                                            <textarea
+                                                class="form__control"
+                                                rows="4"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form">
+                                <div class="group date">
+                                    <div class="form__item">
+                                        <div class="form__group">
+                                            <label class="form__label"
+                                                >Booking Duration:
+                                            </label>
+                                            <input
+                                                class="form__control"
+                                                type="date"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="form__item icon">
+                                        <i
+                                            ><!--?xml version="1.0"?-->
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xmlns:svgjs="http://svgjs.com/svgjs"
+                                                version="1.1"
+                                                x="0"
+                                                y="0"
+                                                viewBox="0 0 443.52 443.52"
+                                                style="
+                                                    enable-background: new 0 0
+                                                        512 512;
+                                                "
+                                                xml:space="preserve"
+                                                class=""
+                                            >
+                                                <g
+                                                    transform="matrix(6.123233995736766e-17,1,-1,6.123233995736766e-17,443.5203204154968,0.0003161430358886719)"
+                                                >
+                                                    <g
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <g>
+                                                            <path
+                                                                d="M336.226,209.591l-204.8-204.8c-6.78-6.548-17.584-6.36-24.132,0.42c-6.388,6.614-6.388,17.099,0,23.712l192.734,192.734    L107.294,414.391c-6.663,6.664-6.663,17.468,0,24.132c6.665,6.663,17.468,6.663,24.132,0l204.8-204.8    C342.889,227.058,342.889,216.255,336.226,209.591z"
+                                                                fill="#000000"
+                                                                data-original="#000000"
+                                                                style=""
+                                                                class=""
+                                                            ></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </i>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__group">
+                                            <input
+                                                class="form__control"
+                                                type="date"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__input">
+                                <div class="form__group">
+                                    <label class="form__label"
+                                        >Project Reference:</label
+                                    >
+                                    <input
+                                        class="form__control --width"
+                                        type="email"
+                                    />
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label"
+                                        >Where did you hear about us::</label
+                                    >
+                                    <input
+                                        class="form__control --width"
+                                        type="email"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="book-now">
+                                <p class="book-now__text">
+                                    By submitting this form I agree to<br />
+                                    <b>GBox Studio’s</b> Terms & Conditions.
+                                </p>
+                                <a href="#" class="book-now__btn">Submit</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__info">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="footer__item">
+                            <p>Email<br />info@goldenboxstudios.com</p>
+                            <p>Tel +84 979 872 809</p>
+                        </div>
+                        <div class="footer__item">
+                            <p>If you have any questions,<br />comments or</p>
+                            <p>
+                                suggestions, feel free to email us or<br />send
+                                us a message.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__contact">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="footer__item">
+                            <p>
+                                andress<br />
+                                04 bau cat district tan binh<br />
+                                ho chi minh city.
+                            </p>
+                        </div>
+                        <div class="footer__item">
+                            <form action="#" class="form">
+                                <div class="form__item">
+                                    <div class="form__group">
+                                        <label class="form__label">Name</label>
+                                        <input
+                                            class="form__control"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label">Phone</label>
+                                        <input
+                                            class="form__control"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label">Email</label>
+                                        <input
+                                            class="form__control"
+                                            type="email"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form__item">
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Subject</label
+                                        >
+                                        <input
+                                            class="form__control"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div class="form__group">
+                                        <label class="form__label"
+                                            >Message</label
+                                        >
+                                        <textarea
+                                            class="form__control"
+                                            rows="4"
+                                        ></textarea>
+                                    </div>
+                                    <div class="form__submit">
+                                        <a href="#">Send</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <a href="#" class="back-top-top">
+                            <img
+                                src="images/icon-back-to-top.png"
+                                alt="back to top"
+                            />
+                        </a>
+                        <p>&copy; 2021 GBOX STUDIO. All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/libs.min.js"></script>
+        <script src="js/main.min.js"></script>
+    </body>
+</html>

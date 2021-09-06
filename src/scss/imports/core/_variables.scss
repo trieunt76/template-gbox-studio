@@ -1,0 +1,66 @@
+/* ----------- Grid Media Queries Breakpoints ----------- */
+$xxs-min: 576px; // Option change
+$xs-min: 768px; // No change
+$sm-min: 992px; // No change
+$md-min: 1200px; // No change
+$lg-min: 1600px; // Option change
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+/* -------------------- Boxed Layout -------------------- */
+$container-width: 1010px;
+$container-max-width: 1920px;
+$height-header: 7.2rem;
+/* ----------------------- Colors ----------------------- */
+$color-primary: #ffde00;
+$color-white: #fff;
+$color-black: #000;
+$color-light-v1: #525355;
+$color-dark-v1: #282828;
+$color-dark-v2: #19191a;
+
+/* ------------------------ Fonts ----------------------- */
+$font-pn-light: 'PN-Light', sans-serif;
+$font-din: 'DIN', sans-serif;
+$font-pn-sbold: 'PN-SBold', sans-serif;
+$font-pn-bold: 'PN-Bold', sans-serif;
+$font-pn-regular: 'PN-Regular', sans-serif;
+$font-pn-thin: 'PN-Thin', sans-serif;
+$font-pn-ebold: 'PN-EBold', sans-serif;
+$font-body: 'Arial', sans-serif;
+
+// /* ---------------------- Font Size --------------------- */
+$fs-body: 1.2rem;
+
+$fs-heading-20: 2rem;
+$fs-heading-11: 1.1rem;
+$fs-heading-14: 1.4rem;
+$fs-heading-18: 1.8rem;
+$fs-heading-24: 2.4rem;
+$fs-heading-28: 2.8rem;
+$fs-heading-30: 3rem;
+$fs-heading-32: 3.2rem;
+$fs-heading-36: 3.6rem;
+$fs-heading-50: 5rem;
+
+// $fs-text-lv1: 4.2rem;
+// $fs-text-lv2: 1.6rem;
+// $fs-text-lv3: 1.5rem;
+// $fs-text-lv4: 1.4rem;
+
+// /* --------------------- Text Color --------------------- */
+$tcl-body: #171717;
+$tcl-white: #fff;
+$tcl-black: #000;
+$tcl-light: #898989;
+$tcl-light-v2: #525355;
+$tcl-light-v3: #39382f;
+$tcl-light-v4: #b4b4b4;
+$tcl-light-v5: #e7e4e4;
+$tcl-primary: #ffde00;
+
+// $animation-cubic: cubic-bezier(0.68, 0.21, 0.16, 0.94);

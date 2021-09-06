@@ -1,0 +1,64 @@
+.homepage {
+    /* ------------------------------------------------------ */
+    /*                          Intro                         */
+    /* ------------------------------------------------------ */
+    @include xs() {
+        margin-top: $height-header;
+    }
+    .intro {
+        padding: 6rem 0;
+        .container {
+            text-align: center;
+            position: relative;
+            &::after {
+                @include pseudo();
+                @include size(33rem, 0.1rem);
+                background-color: $color-black;
+                left: 50%;
+                @include transform(translateX(-50%));
+                @include xxs() {
+                    width: 16rem;
+                }
+            }
+        }
+        &__subtitle {
+            @include text(
+                $font-pn-light,
+                $fs-heading-14,
+                $tcl-body,
+                0.2rem,
+                uppercase,
+                2.2rem
+            );
+        }
+        &__title {
+            margin: 3rem 0;
+            @include text(
+                $font-pn-bold,
+                $fs-heading-20,
+                $tcl-light-v2,
+                0.5rem,
+                uppercase
+            );
+            background-color: $color-primary;
+            display: inline-block;
+        }
+        &__desc {
+            max-width: 80rem;
+            margin: auto;
+            padding-bottom: 5.5rem;
+            span {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            @include text(
+                $font-body,
+                $fs-body,
+                $tcl-body,
+                -0.025rem,
+                null,
+                2.2rem
+            );
+        }
+    }
+}

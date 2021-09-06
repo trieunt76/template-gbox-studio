@@ -1,0 +1,185 @@
+.rental {
+    @include xs() {
+        margin-top: 9rem;
+    }
+    .container {
+        @include flex(null, space-between);
+        @include sm() {
+            flex-direction: column;
+        }
+    }
+    &__left {
+        @include size(26rem, 63.8rem);
+        background-color: $color-light-v1;
+        padding-top: 7.1rem;
+        padding-left: 2rem;
+        @include sm() {
+            @include size(100%);
+            padding-top: unset;
+            padding-left: unset;
+            @include flex(row, space-between, center);
+            padding: 1rem 2rem;
+        }
+        .number {
+            padding: 3rem 3.8rem;
+            background-color: $color-primary;
+            display: inline-block;
+            text-align: center;
+            @include xxs() {
+                padding: 1.5rem;
+            }
+            span {
+                display: block;
+                @include text(
+                    $font-pn-regular,
+                    $fs-heading-11,
+                    $tcl-black,
+                    null,
+                    uppercase
+                );
+                &:last-child {
+                    @include text($font-din, $fs-heading-50);
+                    font-weight: bold;
+                    margin-top: 0.6rem;
+                }
+            }
+        }
+        h3 {
+            @include text($font-pn-ebold, $fs-heading-32, $tcl-white, null);
+            margin: 2.8rem 0;
+        }
+        .content {
+            p {
+                @include text(
+                    $font-pn-regular,
+                    $fs-body,
+                    $tcl-white,
+                    null,
+                    uppercase
+                );
+                margin-bottom: 1.8rem;
+                &:last-child {
+                    text-transform: none;
+                    line-height: 2rem;
+                }
+            }
+            @include xxs() {
+                display: none;
+            }
+        }
+    }
+    &__right {
+        width: 100%;
+        padding-top: 7rem;
+        padding-left: 5rem;
+        @include xs() {
+            padding-left: unset;
+        }
+        &-title {
+            @include text($font-pn-ebold, $fs-heading-28, $tcl-light-v3);
+            margin-bottom: 4rem;
+        }
+        .form {
+            justify-content: flex-start;
+            @include xxs() {
+                flex-direction: column;
+            }
+            .form__item {
+                width: 22.1rem;
+                @include xxs() {
+                    width: 100%;
+                }
+                &:first-child {
+                    margin-right: 7.8rem;
+                    @include xxs() {
+                        margin-right: unset;
+                    }
+                }
+            }
+            textarea.form__control {
+                border: 1px solid $color-black;
+                margin-top: 2rem;
+                padding-left: 1rem;
+            }
+            .group {
+                display: flex;
+                @include xxs() {
+                    flex-direction: column;
+                }
+                .form__item {
+                    input[type='date'] {
+                        border: 1px solid $color-black;
+                        margin-top: 2rem;
+                        padding: 2rem;
+                    }
+                    &.icon {
+                        width: 1.6rem;
+                        align-self: center;
+                    }
+                }
+                &.date {
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    .icon {
+                        margin: 0 3.2rem;
+                        @include transform(rotate(-90deg));
+                        @include xxs() {
+                            @include transform(rotate(0));
+                        }
+                    }
+                    .form__item {
+                        &:first-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .studio-select {
+            &__list {
+                @include flex();
+                margin-top: 2rem;
+                margin-bottom: 3.2rem;
+                &-item {
+                    @include size(4rem);
+                    border: 1px solid $color-black;
+                    background-color: $color-black;
+                    margin-right: 1.8rem;
+                    @include text($font-din, $fs-heading-24, $tcl-light-v4);
+                    position: relative;
+                    cursor: pointer;
+                    @include transition(all 0.3s);
+                    &:hover,
+                    &.active {
+                        background-color: $color-primary;
+                        color: $color-black;
+                        @include transition(all 0.3s);
+                    }
+                    span {
+                        @include positionCenter('both');
+                        top: 60%;
+                    }
+                }
+            }
+        }
+        &-form {
+            .book-now {
+                margin: 7rem 0;
+                &__text {
+                    order: 1;
+                    text-align: unset;
+                    margin-left: 2rem;
+                }
+                &__btn {
+                    font-size: $fs-heading-20;
+                    padding: 4rem 1.2rem;
+                    &:hover {
+                        background-color: $color-primary;
+                        color: $color-light-v1;
+                        @include transition(all 0.3s);
+                    }
+                }
+            }
+        }
+    }
+}

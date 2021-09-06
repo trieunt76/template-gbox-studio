@@ -1,0 +1,51 @@
+.about {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+    background: url('../images/x.png') no-repeat;
+    background-color: $color-dark-v1;
+    background-position: 75%;
+    background-size: contain;
+
+    @include xs() {
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+    &__title {
+        @include text(
+            $font-pn-bold,
+            $fs-heading-36,
+            $tcl-primary,
+            1.6rem,
+            uppercase,
+            5.8rem
+        );
+    }
+    &__desc {
+        @include text(
+            $font-pn-light,
+            $fs-heading-18,
+            $tcl-white,
+            null,
+            null,
+            3rem
+        );
+        padding: 3.4rem 0;
+    }
+    .book-now {
+        &__text {
+            order: 1;
+            text-align: left;
+            margin-left: 2rem;
+            color: $color-white;
+        }
+
+        .book-now__btn {
+            &:hover {
+                background-color: $color-primary;
+                color: $color-dark-v1;
+                @include transition(all 0.3s);
+            }
+        }
+    }
+}

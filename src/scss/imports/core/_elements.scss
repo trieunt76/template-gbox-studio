@@ -1,0 +1,22 @@
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.--pd-section {
+    padding-top: 7.2rem;
+}
+
+.--no-border {
+    border: 0 !important;
+}

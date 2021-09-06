@@ -1,0 +1,243 @@
+/* ------------------------------------------------------ */
+/*                    Project Component                   */
+/* ------------------------------------------------------ */
+.project {
+    &__nav {
+        @include flex(null, center, center);
+        &-item {
+            @include transition(all 0.3s);
+            a {
+                @include text(
+                    $font-pn-bold,
+                    $fs-body,
+                    $tcl-light,
+                    null,
+                    uppercase
+                );
+                padding: 1rem;
+                margin: 0 1rem;
+                @include transition(all 0.3s);
+            }
+            &.active,
+            &:hover {
+                a {
+                    @include transition(all 0.3s);
+                    color: $tcl-body;
+                }
+            }
+        }
+    }
+    &__list {
+        @include flex(null, space-between);
+        flex-wrap: wrap;
+        margin-top: 3rem;
+        &-item {
+            width: calc((100% / 3) - 2rem);
+            margin-bottom: 4.3rem;
+            @include sm() {
+                width: calc((100% / 3) - 1rem);
+            }
+            @include xs() {
+                width: 100%;
+            }
+            a {
+                display: block;
+                position: relative;
+                height: 0;
+                padding-bottom: calc(9 / 16 * 100%);
+                overflow: hidden;
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include size(100%);
+                    @include transition(all 0.3s);
+                }
+            }
+            .content {
+                text-align: center;
+                h3 {
+                    position: relative;
+                    margin-top: 3.8rem;
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    @include text(
+                        $font-pn-bold,
+                        $fs-body,
+                        $tcl-body,
+                        null,
+                        uppercase
+                    );
+                    &::before {
+                        @include pseudo();
+                        @include size(2.4rem, 0.3rem);
+                        background-color: $color-primary;
+                        left: 50%;
+                        bottom: 0;
+                        @include transform(translateX(-50%));
+                    }
+                }
+                p {
+                    @include text($font-pn-regular);
+                    padding-bottom: 1.2rem;
+                    span {
+                        font-style: italic;
+                    }
+                }
+            }
+            &:hover {
+                a {
+                    img {
+                        @include transform(scale(1.1));
+                        @include transition(all 0.3s);
+                    }
+                }
+            }
+        }
+    }
+    &__footer {
+        position: relative;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 7.4rem;
+        .btn-view-all {
+            display: inline-block;
+            @include text($font-pn-sbold, $fs-body, $tcl-body, null, uppercase);
+            img {
+                display: block;
+                margin: auto;
+                padding-top: 1.4rem;
+            }
+        }
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                          Form                          */
+/* ------------------------------------------------------ */
+.form {
+    @include flex(null, space-between);
+    &__item {
+        width: calc((100% / 2) - 1.8rem);
+    }
+    &__group {
+        margin-bottom: 2.5rem;
+    }
+    &__label {
+        display: block;
+    }
+    &__control {
+        width: 100%;
+        outline: none;
+        border: 0;
+        border-bottom: 0.1rem solid $color-black;
+        background-color: transparent;
+        padding: 0.8rem 0;
+        @include text($font-body, $fs-body);
+        &.--width {
+            width: 51.8rem;
+            border: 1px solid $color-black;
+            margin-top: 2rem;
+            padding-left: 1rem;
+            @include xxs() {
+                width: 100%;
+            }
+        }
+    }
+    textarea {
+        resize: none;
+    }
+    &__submit {
+        text-align: right;
+        margin-top: 4rem;
+        a {
+            padding: 0.8rem 1rem;
+            background-color: $color-black;
+            color: $tcl-white;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                        Book Now                        */
+/* ------------------------------------------------------ */
+.book-now {
+    display: flex;
+    justify-content: flex-start;
+    @include transition(all 0.3s);
+    &__text {
+        @include text($font-pn-regular, $fs-heading-14, null, null, null, 2rem);
+        text-align: right;
+        margin-right: 2rem;
+        b {
+            font-weight: bold;
+        }
+    }
+    &__btn {
+        @include transition(all 0.3s);
+        display: block;
+        padding: 1.8rem 2.7rem;
+        background-color: $color-light-v1;
+        color: $color-primary;
+        text-align: center;
+        @include text(
+            $font-pn-ebold,
+            $fs-heading-24,
+            $tcl-primary,
+            null,
+            uppercase,
+            3rem
+        );
+        @include borderRadius(1rem);
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                         Control                        */
+/* ------------------------------------------------------ */
+.control {
+    @include flex();
+    &__prev,
+    &__next {
+        @include flex(null, null, center);
+        i {
+            width: 1.1rem;
+            display: inline-block;
+        }
+        span {
+            @include text($font-pn-regular, $fs-body, $tcl-body);
+        }
+    }
+    &__prev {
+        position: relative;
+        padding-right: 1rem;
+        i {
+            margin-left: 1rem;
+            svg {
+                @include transform(rotate(90deg));
+            }
+        }
+        &::before {
+            content: '';
+            @include size(0.1rem, 1rem);
+            left: 100%;
+            @include positionCenter('top');
+            background-color: $tcl-body;
+        }
+        span {
+            padding-left: 2rem;
+        }
+    }
+    &__next {
+        padding-left: 1rem;
+        span {
+            padding-right: 2rem;
+        }
+        i {
+            svg {
+                @include transform(rotate(-90deg));
+            }
+        }
+    }
+}
